@@ -17,6 +17,7 @@ playSound song =
     currentContext $= Just context
     buffer1 <- createBuffer $ File song
     [source] <- genObjectNames 1
+    loopingMode source $= Looping
     queueBuffers source [buffer1]
     play [source]
     --sleep 4
